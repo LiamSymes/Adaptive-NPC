@@ -9,20 +9,21 @@ public class EnemyStats : MonoBehaviour
     private int enemyAttack;
     private int enemyDefense;
 
-    public void GenerateEnemyStats()
+    public void GenerateRandomStats()
     {
-        // Randomly generate enemy stats
+        // Generate random stats within specified ranges
         enemyHealth = Random.Range(40, 61);
         enemyAttack = Random.Range(5, 11);
         enemyDefense = Random.Range(5, 11);
+    }
 
-        // Create a summary string of enemy stats
+    public void DisplayEnemyStats()
+    {
         string enemyStatsSummary = "Enemy Stats:\n" +
                                    "Health: " + enemyHealth + "\n" +
                                    "Attack: " + enemyAttack + "\n" +
                                    "Defense: " + enemyDefense;
 
-        // Display the enemy stats summary on the UI Text element
         enemyStatsText.text = enemyStatsSummary;
     }
 }
